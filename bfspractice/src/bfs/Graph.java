@@ -15,6 +15,7 @@ public class Graph {
 	public Vertex addVertex(String name) {
 		Vertex vertex = new Vertex();
 		vertices.put(name,  vertex);
+		vertex.setName(name);
 		return vertex;
 	}
 	
@@ -27,6 +28,7 @@ public class Graph {
 		v1.addAdjacent(v2);
 		v2.addAdjacent(v1);
 	}
+
 	
 	//traversal method
 	public void breadthFirstTraversal(String start, String end) {
@@ -44,6 +46,7 @@ public class Graph {
 		
 		//current vertex to check - start appropriately at start
 		Vertex current = startVert;
+		System.out.println(current);
 		//repeat until end is reached
 		while (current != endVert)
 		{
@@ -57,11 +60,14 @@ public class Graph {
 				{
 					visited.add(v);
 					queue.add(v);
+					System.out.println("Visited: " + visited);
+					System.out.println("Queue:" + queue);
 				}
 			}
 			
 			//go to the next vertex in the queue
 			current = queue.remove();
+			System.out.println("Current: " + current);
 		}
 	}
 	
@@ -97,11 +103,15 @@ public class Graph {
 					visited.put(v, current);
 					//add v to queue
 					queue.add(v);
+					
+					System.out.println("Visited: " + visited);
+					System.out.println("Queue: " + queue);
 				}
 			}
 			
 			//go to the next vertex
 			current = queue.remove();
+			System.out.println("Current: " + current);
 		}
 		
 		//create the path by adding from end to start
@@ -116,6 +126,7 @@ public class Graph {
 			//use addFirst to get the right order (start to end) - adding in front of the last current
 			path.addFirst(current);
 		}
+			System.out.println(path);
 		
 		return path;
 	}
