@@ -37,21 +37,4 @@ public class Vertex {
 	public String toString() {
 		return this.name;
 	}
-
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(adjacents);
-//	}
-
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Vertex other = (Vertex) obj;
-//		return Objects.equals(adjacents, other.adjacents);
-//	}
-	
 }
